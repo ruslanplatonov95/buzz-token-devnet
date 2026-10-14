@@ -1,3 +1,7 @@
 node_modules/
 .test-authority.json
 .mint-keypair.json
+.fee-mint-keypair.json
+.fee-recipient-keypair.json
+.stake-vault-keypair.json
+.stake-ledger.json

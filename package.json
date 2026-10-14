@@ -2,7 +2,14 @@
   "name": "buzz-devnet-token-test",
   "private": true,
   "type": "module",
-  "description": "Devnet-only BUZZ token issuance and verification. No real funds or sale.",
+  "description": "Devnet-only BUZZ token issuance, transfer-fee burn and operator-controlled staking demo. No real funds or sale.",
+  "scripts": {
+    "devnet:issue": "node issue.mjs",
+    "devnet:fee": "node issue-fee-demo.mjs",
+    "devnet:stake": "node staking-demo.mjs stake",
+    "devnet:unstake": "node staking-demo.mjs unstake",
+    "devnet:status": "node staking-demo.mjs status"
+  },
   "dependencies": {
     "@solana/spl-token": "0.4.15",
     "@solana/spl-token-metadata": "^0.1.6",
