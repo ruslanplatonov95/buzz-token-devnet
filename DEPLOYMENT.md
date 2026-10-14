@@ -39,3 +39,20 @@
 | Воркер: сбор и сжигание | [`2hnYvvtewoCxBmqPYiJvMwAwbXyVkv97SLef9n8LmRns27845SsXY4hRkYGjKj5SGVC7nYMu8gkAVgYiL4f73u5e`](https://explorer.solana.com/tx/2hnYvvtewoCxBmqPYiJvMwAwbXyVkv97SLef9n8LmRns27845SsXY4hRkYGjKj5SGVC7nYMu8gkAVgYiL4f73u5e?cluster=devnet), [`23Zvt1jemoSCDPbGL3WniGppuAYpwekhwcnsr4ZhJE5FhwoLzyfQajBEY1P56ZMRrkxwhTJsVdMXpLVAfVSYXoZ9`](https://explorer.solana.com/tx/23Zvt1jemoSCDPbGL3WniGppuAYpwekhwcnsr4ZhJE5FhwoLzyfQajBEY1P56ZMRrkxwhTJsVdMXpLVAfVSYXoZ9?cluster=devnet) | Воркер автоматически собрал и сжёг 1; текущий supply 9 999 979,049999 |
 
 Стейкинг здесь **только управляемая оператором демонстрация**: хранилище подписывается локальным ключом оператора, а награда берётся из тестовой казны по формуле с условными 8% годовых. Нет автономного смарт-контракта, аудита безопасности, гарантированной доходности, ценового «пола» или денег. Короткий цикл показал, что комиссия 1% на каждом переводе намного превышает такую награду. Сжигание не встроено в сам перевод: отдельный воркер выполняет его только пока запущен и сейчас просматривает лишь три известных тестовых аккаунта. Повторный запуск без новой комиссии не сжёг ничего.
+
+## BUZZT3 — проверка нулевой комиссии и тестового распределения 99%/1%
+
+14 октября 2026 года создан отдельный Devnet mint [`5UTUehUCykNUsNEsnShQSWvgMXJQRzjYe26b3sXLopak`](https://explorer.solana.com/address/5UTUehUCykNUsNEsnShQSWvgMXJQRzjYe26b3sXLopak?cluster=devnet). Выпущено 10 000 000 BUZZT3. 9 900 000 отправлены в тестовую казну и 100 000 — на отдельный тестовый адрес; это **не** продажа 1% населению. У mint нет комиссии за перевод и права заморозки, право дополнительной эмиссии отозвано.
+
+| Действие | Подпись Devnet-транзакции | Проверенный результат |
+|---|---|---|
+| Создание mint | [`3zAKyn7GqdEvxH2SwnJKVpggeenUzsstBRJYjbdyzruABJigvfsAvG4VzjYeVA9xB6niEoyrJHAD5yu1FrCFMJLx`](https://explorer.solana.com/tx/3zAKyn7GqdEvxH2SwnJKVpggeenUzsstBRJYjbdyzruABJigvfsAvG4VzjYeVA9xB6niEoyrJHAD5yu1FrCFMJLx?cluster=devnet) | Token-2022 без TransferFeeConfig |
+| Выпуск | [`2JxbjmBu7s1D45yscD36sPRbHDgixdyY4xHzzevi13fDcb8HExBWh6wmuKqKMrDisHv69LYeJydhstnQPTQHSrdx`](https://explorer.solana.com/tx/2JxbjmBu7s1D45yscD36sPRbHDgixdyY4xHzzevi13fDcb8HExBWh6wmuKqKMrDisHv69LYeJydhstnQPTQHSrdx?cluster=devnet) | 10 000 000 тестовых единиц |
+| Распределение | [`3eZ7f7StqA8ZFZo9FVYyCovnmWD7rpdcsUJ4CJB8eVMpnurtHpCPwthdEvcJXdSSEgX86dGq3iDhnwMjrNn1NQCi`](https://explorer.solana.com/tx/3eZ7f7StqA8ZFZo9FVYyCovnmWD7rpdcsUJ4CJB8eVMpnurtHpCPwthdEvcJXdSSEgX86dGq3iDhnwMjrNn1NQCi?cluster=devnet) | 100 000 у тестового получателя, 9 900 000 в казне |
+| Отзыв права эмиссии | [`3XK8ET8D2JN9cfdv1oAXr2BUGCFq9PwnKiLr5iZsk8mZNirkNhvt4ZBLeTi6VqQY8oBKKsUxnAKmTccxCZggEqNi`](https://explorer.solana.com/tx/3XK8ET8D2JN9cfdv1oAXr2BUGCFq9PwnKiLr5iZsk8mZNirkNhvt4ZBLeTi6VqQY8oBKKsUxnAKmTccxCZggEqNi?cluster=devnet) | Новая эмиссия отключена |
+| Тестовое внесение | [`4aaAnwb6RarcJ6YLp5YApan6i1YapZUNf7hyBnAa7q526PVnBH6SrMibaajdAhq4JXUsbZoRjoPp3NTboJP1pzMh`](https://explorer.solana.com/tx/4aaAnwb6RarcJ6YLp5YApan6i1YapZUNf7hyBnAa7q526PVnBH6SrMibaajdAhq4JXUsbZoRjoPp3NTboJP1pzMh?cluster=devnet) | 500 ушли с тестового адреса, 500 поступили в vault без токенной комиссии |
+| Возврат и награда | [`29WsRSLYMGF2Bydc8Eubq5UZ77y4SioNNcBUBTvv5r2pMzGNfVehD799mKBffkXioiPYAYs8iDL4XmgvVBvVT9Zu`](https://explorer.solana.com/tx/29WsRSLYMGF2Bydc8Eubq5UZ77y4SioNNcBUBTvv5r2pMzGNfVehD799mKBffkXioiPYAYs8iDL4XmgvVBvVT9Zu?cluster=devnet) | Через 26 сек. возвращены 500 и дополнительно 0,000032 из тестовой казны; токенная комиссия 0 |
+
+Скрипт повторно запущен после цикла: нового выпуска и распределения не было. Числовая модель и её 4 теста находятся в `economics-v3.mjs` и `economics-v3.test.mjs`.
+
+Этот тест **не решает** проблему доверия к стейкингу: vault подписывается локальным ключом оператора, а награда зависит от остатка тестовой казны. Burn-worker не требуется для BUZZT3, так как нет комиссии за перевод. Никаких сделок, реального рынка, ценовой поддержки или заявок на покупку BUZZT3 не было.

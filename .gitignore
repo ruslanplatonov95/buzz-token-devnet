@@ -6,3 +6,7 @@ node_modules/
 .stake-vault-keypair.json
 .stake-ledger.json
 .fee-collector-keypair.json
+.v3-mint-keypair.json
+.v3-recipient-keypair.json
+.v3-vault-keypair.json
+.v3-stake-ledger.json

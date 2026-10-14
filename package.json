@@ -11,7 +11,13 @@
     "devnet:status": "node staking-demo.mjs status",
     "devnet:transfer": "node test-transfer.mjs",
     "devnet:burn": "node burn-worker.mjs --once",
-    "devnet:watch": "node burn-worker.mjs --watch"
+    "devnet:watch": "node burn-worker.mjs --watch",
+    "devnet:v3:issue": "node issue-v3.mjs",
+    "devnet:v3:stake": "node staking-v3.mjs stake",
+    "devnet:v3:unstake": "node staking-v3.mjs unstake",
+    "devnet:v3:status": "node staking-v3.mjs status",
+    "economics:v3": "node economics-v3.mjs",
+    "test": "node --test economics-v3.test.mjs"
   },
   "dependencies": {
     "@solana/spl-token": "0.4.15",
