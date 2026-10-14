@@ -33,9 +33,10 @@
 1. Установить зависимости из `package.json` командой `pnpm install`.
 2. Пополнить публичный адрес тестового плательщика бесплатным **Devnet SOL** из [официального faucet](https://faucet.solana.com/). Никогда не отправлять на него настоящий SOL из mainnet.
 3. Для исходного mint — `node issue.mjs`. Для второго mint — `node issue-fee-demo.mjs` (потребуется локальный тестовый ключ из первого шага). Затем `node staking-demo.mjs stake`, подождать минимум 15 секунд и `node staking-demo.mjs unstake`. Для проверки воркера: `node test-transfer.mjs`, затем `node burn-worker.mjs --once`.
-4. Проверить адрес mint в [Solana Explorer](https://explorer.solana.com/?cluster=devnet), выбрав сеть Devnet.
+4. Для BUZZT3 — `node issue-v3.mjs`, затем `node staking-v3.mjs stake`, подождать минимум 15 секунд и `node staking-v3.mjs unstake`. Модель проверить командой `node --test economics-v3.test.mjs`. После выполненного цикла повторный `stake` намеренно заблокирован локальным журналом; для нового сценария нужен отдельный тестовый запуск, не повторное списание.
+5. Проверить адрес mint в [Solana Explorer](https://explorer.solana.com/?cluster=devnet), выбрав сеть Devnet.
 
-Файлы ключей `.test-authority.json`, `.mint-keypair.json`, `.fee-mint-keypair.json`, `.fee-recipient-keypair.json`, `.stake-vault-keypair.json` и `.fee-collector-keypair.json` содержат **только тестовые** закрытые ключи, исключены из Git и не подходят для mainnet. Локальный `.stake-ledger.json` тоже исключён из Git. Не публиковать их и не использовать этот каталог как хранилище реальных средств.
+Файлы ключей `.test-authority.json`, `.mint-keypair.json`, `.fee-mint-keypair.json`, `.fee-recipient-keypair.json`, `.stake-vault-keypair.json`, `.fee-collector-keypair.json`, `.v3-mint-keypair.json`, `.v3-recipient-keypair.json` и `.v3-vault-keypair.json` содержат **только тестовые** закрытые ключи, исключены из Git и не подходят для mainnet. Локальные `.stake-ledger.json` и `.v3-stake-ledger.json` тоже исключены из Git. Не публиковать их и не использовать этот каталог как хранилище реальных средств.
 
 ## Выпуск в Devnet
 
