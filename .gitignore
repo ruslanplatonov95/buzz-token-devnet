@@ -1,0 +1,3 @@
+node_modules/
+.test-authority.json
+.mint-keypair.json

@@ -1,0 +1,11 @@
+{
+  "name": "buzz-devnet-token-test",
+  "private": true,
+  "type": "module",
+  "description": "Devnet-only BUZZ token issuance and verification. No real funds or sale.",
+  "dependencies": {
+    "@solana/spl-token": "0.4.15",
+    "@solana/spl-token-metadata": "^0.1.6",
+    "@solana/web3.js": "^1.99.0"
+  }
+}
