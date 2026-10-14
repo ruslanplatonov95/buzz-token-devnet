@@ -5,3 +5,4 @@ node_modules/
 .fee-recipient-keypair.json
 .stake-vault-keypair.json
 .stake-ledger.json
+.fee-collector-keypair.json

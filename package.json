@@ -8,7 +8,10 @@
     "devnet:fee": "node issue-fee-demo.mjs",
     "devnet:stake": "node staking-demo.mjs stake",
     "devnet:unstake": "node staking-demo.mjs unstake",
-    "devnet:status": "node staking-demo.mjs status"
+    "devnet:status": "node staking-demo.mjs status",
+    "devnet:transfer": "node test-transfer.mjs",
+    "devnet:burn": "node burn-worker.mjs --once",
+    "devnet:watch": "node burn-worker.mjs --watch"
   },
   "dependencies": {
     "@solana/spl-token": "0.4.15",
